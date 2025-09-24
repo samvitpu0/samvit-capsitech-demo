@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CardGridGenerator : MonoBehaviour
@@ -76,7 +77,8 @@ public class CardGridGenerator : MonoBehaviour
                 index++;
             }
         }
-        return cards;
+        var shuffledList = cards.OrderBy( x => Random.value ).ToList( );
+        return shuffledList;
     }
 
 }
